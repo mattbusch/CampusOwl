@@ -1,0 +1,95 @@
+<html>
+  <body>
+
+<div style= "height:200px; width:300px">
+<div id= "VideoContainer">
+  <div id="subContainer">
+  </div>
+</div>
+  <div id="publisherContainer"></div>
+</div>
+  <input type="button" id= "ebutton" value="End Session" onclick="endsession()" style="display:none" />
+
+  <script src="https://static.opentok.com/v2/js/opentok.js" charset="utf-8"></script>
+
+<script type="text/javascript">
+var selected = null, // Object of the element to be moved
+    x_pos = 0, y_pos = 0, // Stores x & y coordinates of the mouse pointer
+    x_elem = 0, y_elem = 0; // Stores top, left values (edge) of the element
+
+// Will be called when user starts dragging an element
+function _drag_init(elem) {
+    // Store the object of the element which needs to be moved
+    selected = elem;
+    x_elem = x_pos - selected.offsetLeft;
+    y_elem = y_pos - selected.offsetTop;
+}
+
+// Will be called when user dragging an element
+function _move_elem(e) {
+    x_pos = document.all ? window.event.clientX : e.pageX;
+    y_pos = document.all ? window.event.clientY : e.pageY;
+    if (selected !== null) {
+        selected.style.left = (x_pos - 15 - x_elem) + 'px';
+        selected.style.top = (y_pos - 270 - y_elem) + 'px' ;
+        if (selected.style.top>200) {
+          console.log(selected.style.top);
+        }
+    }
+}
+
+// Destroy the object when we are done
+function _destroy() {
+    selected = null;
+}
+
+document.onmousemove = _move_elem;
+document.onmouseup = _destroy;
+</script>
+    
+<script charset="utf-8">
+var sesh;
+var session;
+var publisher;
+      var apiKey = '45601732';
+      var sessionId = '{{session.seshid}}';
+      var token = '{{tk}}';
+      token = token.split("&#x3D;").join("=");
+      session = OT.initSession('45601732', sessionId)
+        session.on('streamCreated', function(event) {
+          session.subscribe(event.stream,'subContainer',{width:300, height:200});
+          publisher.element.style.width = "100px";
+          publisher.element.style.height = "66px";
+          publisher.element.style.top="-66px";
+          publisher.element.style.left="200px";
+          document.getElementById('publisherContainer').onmousedown = function () {
+              _drag_init(this);
+              return false;
+          };
+        })
+        session.connect(token, function(error) {
+          publisher = OT.initPublisher('publisherContainer',{width:300, height:200, position:'relative'});
+          session.publish(publisher);
+        });
+        var element=document.getElementById('ebutton');
+        element.style.display='';
+        session.on("connectionDestroyed", function(event){
+          console.log("sessionDisconnected event fired");
+          document.getElementById('publisherContainer').onmousedown =function(){};
+          publisher.element.style.width = "300px";
+          publisher.element.style.height = "200px";
+          publisher.element.style.top = 0;
+          publisher.element.style.left = 0;
+          var mydiv=document.createElement('div');
+          mydiv.id='subContainer';
+          document.getElementById('VideoContainer').appendChild(mydiv);
+        // Session has been disconnected. Include any clean up code here
+        });
+      function endsession(){
+          session.disconnect();
+          var element=document.getElementById('ebutton');
+        element.style.display='none';
+      }
+    </script>
+  </body>
+</html> 

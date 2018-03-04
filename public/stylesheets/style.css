@@ -1,0 +1,431 @@
+
+body {
+    position: relative;
+}
+
+a {
+  color: #731c9e;
+}
+
+.headerall{
+    background-color:#731c9e;
+    color:white;
+    padding:20px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 300px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.spacingblock{
+    padding: 20px;
+    height:250px;
+    width: 250px;
+}
+.stuspacingblock{
+    padding: 20px;
+    width: 250px;
+    float: left;
+}
+
+.schoolblock{
+    border: 1px solid #E0E0E0;
+    height: 100%;
+    padding: 5px;
+    width: 100%;
+}
+.stublock{
+    border: 1px solid #E0E0E0;
+    height: 100%;
+    width: 100%;
+}
+.schoolnameblock{
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.innerspaceblock{
+    height:70%;
+}
+.innerstuspaceblock{
+    padding: 5px;
+}
+
+.innerbuttonbox{
+    position: relative;
+    left:23%;
+}
+
+ .schoolbutton {
+    text-align: center;
+    height: auto;
+    padding: 8px 15px;
+    background: #9f9f9f;
+    color: white;
+    border: 2px solid #999999;
+    border-radius: 4px;
+   }
+
+.checkboxholder, .checkboxholder2, .timeholder, .timeholder2{
+    overflow: hidden;
+    padding: 5px;
+    height: 35px;
+    border-bottom: 1px solid Black;
+}
+
+.checkboxholder2, .timeholder2{
+    background-color: #b98dce;
+}
+
+.checkboxday{
+    border-right: 1px solid Black;
+    float: left;
+    width:35px;
+    padding-top: 35px;
+}
+.checkboxday2{
+    border-right: 1px solid Black;
+    float: left;
+    display: none;
+}
+.checkwrapper{
+    margin-left: 65px;
+    position: static;
+    width: 485px;
+    height: 1750px;
+}
+.timewrapper{
+    position: relative;
+    float: left;
+}
+.timeholder, .timeholder2{
+    border-right: 1px solid Black;
+    border-left: 1px solid Black;
+}
+
+.timeholder, .timeholder2,.daylabelholder{
+    height: 35px;
+    border-bottom: 1px solid Black;
+}
+.daylabelholderwrapper{
+    float: left;
+}
+.daylabelholder{
+    position: fixed;
+    border-right: 1px solid Black;
+    border-top: 1px solid Black;
+    width: 35px;
+    background-color: #b98dce;
+    padding: 5px;
+    padding-top: 2px;
+}
+.nextschedbutton{
+    position: fixed;
+    left: 550px;
+    top: 200px;
+}
+.tempcalendar{
+    padding: 20px;
+    height:120px;
+    width: 100px;
+    float: left;
+}
+
+.calendarwrapper{
+    margin-left: 10px;
+    position: static;
+    width: 100%;
+    height: 1000px;
+}
+
+/*Vishal's CSS code */
+
+@-webkit-keyframes animatedBackgroundImage {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes animatedBackgroundImage {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.jumbotron {
+    background-color: #404040 !important;
+    box-shadow: 0px 40px 60px -20px rgba(4, 4, 4, 0.5);
+    background-image: url(http://s3.amazonaws.com/einstein-blog-live/public/uploads/images/49231/CampusLife.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 1;
+    width:100%;
+    position: relative;
+    height:800px;
+    box-shadow: inset 0 0 85px 385px rgba(4, 4, 4, 0.4);
+    -webkit-animation-name: animatedBackgroundImage;
+    -webkit-animation-duration: 1s;
+    animation-name: animatedBackgroundImage;
+    animation-duration: 1s;
+    overflow: hidden;
+}
+
+/**.jumbotron {
+    height:630px;
+    vertical-align: middle;
+    background-image: url(http://s3.amazonaws.com/einstein-blog-live/public/uploads/images/49231/CampusLife.jpg);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100%;
+    background-color:transparent;
+    background-size: cover;
+}**/
+
+.main-title {
+  color: white;
+  font-size: 50%;
+  letter-spacing: 1px;
+  font-family: 'Zeyada';
+  font-weight: bold;
+  margin-top: 5%;
+  text-transform: uppercase;
+  text-align:center;
+
+}
+
+.sub-title {
+    color: white;
+    font-family: 'Zeyada';
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.button-text {
+    font-family: 'Zeyada';
+    color: white;
+    font-size:20px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.button1{
+    margin: 0 0;
+    background-color: transparent;
+    border: 2px solid white;
+    height: 35px;
+    width: 150px;
+}
+
+.button1:hover {
+    background-color: white;
+    color:black;
+}
+
+.owl-image {
+    border-radius: 100%;
+}
+
+.jumbotron-home-info {
+    background: white;
+    box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding: 10px;
+    /**margin: 10px 20px 40px 20px;*/
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.8em;
+    text-align: center;
+    width: 98%;
+    color:#731c9e;
+}
+
+.button-2 {
+    background-color: #33cc33;
+    height: 35px;
+    width: 150px;
+    font-family: 'Dosis';
+    font-size: 20px;
+    color:white;
+    border-radius: 5px;
+    border:none;
+}
+
+.button-2:hover {
+    background-color: white;
+    border: 2px solid  #33cc33;
+    color: grey;
+}
+
+.rb {
+    align-content: right;
+}
+
+/*
+.ui-accordion-header {
+    color: blue;
+    font-family: Dosis;
+    width:70%;
+    background-color: #767E8A;
+}
+*/
+
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+button.accordion {
+    background-color: #eee;
+    color: #85929E;
+    cursor: pointer;
+    padding: 18px;
+    width: 70%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.2s;
+    box-shadow: unset;
+    margin-left: 15%;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+button.accordion.active, button.accordion:hover {
+    background-color: #ddd;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    margin-left: 15%;
+    width: 70%;
+    font-family: 'Slabo 27px';
+    font-size: 20px;
+}
+
+div.panel.show {
+    opacity: 1;
+    max-height: 5000px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+    border:none;
+
+}
+
+.acc-header {
+    font-family: 'Dosis';
+    color:#731c9e
+
+}
+
+.button2{
+    margin: 0 0;
+    background-color: #85929E;
+    border-radius: 20%;
+    height: 50px;
+    width: 200px;
+    color:white;
+}
+
+.button2:hover {
+    background-color: white;
+    border: 2px solid #85929E;
+    color: grey;
+    border-radius: 20%;
+}
+
+.skype-image2 {
+    width: 25%;
+    border-radius: 100%;
+}
+
+.center-image1 {
+    padding-left: 6%;
+}
+
+.center-image2 {
+    padding-left: 8%;
+}
+
+.iec-heading {
+    font-family: 'Zeyada';
+    font-size:80px;
+    text-align:center;
+    /*color:#731c9e;*/
+    padding-top:12.5%;
+    font-weight: bold;
+    /*padding-bottom:25%;*/
+}
+
+.iec-sub-heading {
+    font-family: 'Slabo 27px';
+    font-size:55px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.purple-text {
+    color:#731c9e;
+}
+
+.iec-text {
+    padding-left: 20%;
+    color:#731c9e;
+    font-family: 'Slabo 27px';
+    font-size: 25px;
+}
+
+.iec-button {
+    background-color: grey;
+    color: white;
+}
+
+.iec-button:hover {
+    background-color: white;
+    color: grey;
+    border: 2px solid grey;
+}

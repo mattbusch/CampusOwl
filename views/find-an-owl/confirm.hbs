@@ -1,0 +1,25 @@
+<div class="confirmheader">
+	<h3>Confirm Information</h3>
+	<h4>You are scheduling an interview on {{schedtime}} with {{owl.name}} from {{school.name}}</h4>
+	{{#if token}}
+	<form method="POST" action="/find-an-owl/tokenuse" >
+				<input type="hidden" name="userid" value="{{owl._id}}">
+
+		{{#each token}}
+		<input type="submit" name=token value="{{@index}}" />
+		{{/each}}
+	</form>
+	{{/if}}
+	<form action="/find-an-owl/paid" method="POST">
+			<input type="hidden" name="userid" value="{{owl._id}}">
+  		<script
+	    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	    data-key="pk_test_P12BwVY9md9e1B4VQQWc1j8f"
+	    data-amount="3499"
+	    data-name="{{owl.name}}"
+	    data-description="{{schedtime}}"
+	    data-image="/{{owl.image}}"
+	    data-locale="auto">
+	  </script>
+	</form>
+</div>

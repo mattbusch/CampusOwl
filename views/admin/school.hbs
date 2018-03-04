@@ -1,0 +1,13 @@
+<div>
+	<form action="/admin/school/" method="post" style='max-width: 300px;'>
+	<input type="hidden" name="_id" value = "{{theSchool._id}}">
+	Name: <input type="text" name="name" value="{{theSchool.name}}">
+	<br>City: <input type="text" name="city" value="{{theSchool.city}}">
+	<br>State: <input type="text" name="state" value="{{theSchool.state}}">
+	<br>Code: <input type="text" name="code" value="{{theSchool.code}}">
+	<br>Back Color: <input type="text" name="bcolor" value="{{theSchool.bcolor}}">
+	<br>Front Color: <input type="text" name="fcolor" value="{{theSchool.fcolor}}">
+	<br>Description: <input type="text" name="desc" value="{{theSchool.desc}}">
+	<br><input type="submit" value="Edit">
+	</form>
+</div>

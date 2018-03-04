@@ -1,0 +1,28 @@
+{
+  "name": "sampsite",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 ./bin/www",
+    "test": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "express-session": "^1.10.1",
+    "hbs": "^4.0.0",
+    "jade": "~1.11.0",
+    "kerberos": "~0.0.17",
+    "mongodb": "~2.0.33",
+    "mongoose": "^4.4.1",
+    "monk": "^2.1.0",
+    "morgan": "~1.7.0",
+    "opentok": "^2.3.2",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^1.0.0",
+    "serve-favicon": "^2.3.0"
+  }
+}

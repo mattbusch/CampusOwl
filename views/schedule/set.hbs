@@ -1,0 +1,77 @@
+<form action="/schedule/set" method="post">
+	<div class = "timewrapper">
+		<div class ="timeholder2">
+			Time
+		</div>
+		{{#each timesee}}
+		<div class = "timeholder">
+			<span class= "timelabel">{{[0]}}</span>
+		</div>
+		<div class = "timeholder2">
+			<span class= "timelabel">{{[1]}}</span>
+		</div>
+		{{/each}}
+	</div>
+	<div class = "checkwrapper">
+		<div id="cbd" style="display:''">
+			{{#each days}}
+			<div class = "daylabelholderwrapper">
+				<div class= "daylabelholder">
+					{{[1]}}
+				</div>
+			</div>
+			<div class = 'checkboxday' >
+				{{#each ../times}}
+				<div class = 'checkboxholder'>
+					<input type= "checkbox" id='{{../[0]}}{{[0]}}' name='{{../[0]}}{{[0]}}'/>
+				</div>
+				<div class = 'checkboxholder2'>
+					<input type= "checkbox" id='{{../[0]}}{{[1]}}' name='{{../[0]}}{{[1]}}'/>
+				</div>
+				{{/each}}
+			</div>
+			{{/each}}
+		</div>
+		<div id="cbd2" style="display:none">
+			{{#each days2}}
+			<div class = "daylabelholderwrapper">
+				<div class= "daylabelholder">
+					{{[1]}}
+				</div>
+			</div>
+			<div class = 'checkboxday' >
+				{{#each ../times}}
+				<div class = 'checkboxholder'>
+					<input type= "checkbox" id='{{../[0]}}{{[0]}}' name='{{../[0]}}{{[0]}}'/>
+				</div>
+				<div class = 'checkboxholder2'>
+					<input type= "checkbox" id='{{../[0]}}{{[1]}}' name='{{../[0]}}{{[1]}}'/>
+				</div>
+				{{/each}}
+			</div>
+			{{/each}}
+		</div>
+		<div class= "nextschedbutton" onclick= "nextpage()" >Button LOL</div>
+	</div>
+	<input type="submit">
+<form>
+<script type="text/javascript">
+{{#each saved}}
+	document.getElementById('{{this}}').checked = true;
+{{/each}}
+
+function nextpage(){
+	var element=document.getElementById('cbd2');
+        element.style.display='';
+        element=document.getElementById('cbd');
+        element.style.display='none';
+    }
+</script>
+
+
+
+
+
+
+
+NEED JAVASCRIPT BUTTON FOR NEXT, LOOK AT CALL.HBS FOR EXAMPLE CHECKBOXHOLDER+CHECKBOXHOLDER2

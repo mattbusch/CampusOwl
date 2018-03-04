@@ -1,0 +1,19 @@
+<div class ="stupage" style = "background-color:{{sch.bcolor}}; color: {{sch.fcolor}};">
+	<h1>{{sch.name}}</h1>
+	<h3>{{sch.desc}}</h3>
+	{{#each owl}}
+		<div class= "stuspacingblock">
+		<div class = "stublock" style="background-color: {{../sch.fcolor}}; color: {{../sch.bcolor}};">
+			<div class = "innerstuspaceblock">
+				<div class = "stunameblock" style = >
+					<font size = 5><strong>{{name}}</strong></font>
+				</div>
+			</div>
+			<a class="innerbuttonbox" href="/find-an-owl/owl/{{_id}}">
+				<span class="schoolbutton">BOOK NOW</span>
+			</a>
+		</div>
+	</div>
+	{{/each}}
+	{{owl}}
+</div>

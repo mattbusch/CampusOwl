@@ -1,0 +1,5 @@
+{{#each all}}
+<div><input type="button" value="{{username}}" onclick="location.href='/admin/user/{{_id}}'"> ({{type}}) {{#if approved}}APPROVED{{/if}} {{name}}: {{email}}{{#if schoolcode}} SCHOOL: {{schoolcode}}{{/if}}  
+<div>
+
+{{/each}}

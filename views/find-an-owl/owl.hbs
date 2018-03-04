@@ -1,0 +1,13 @@
+<form action="/find-an-owl/confirm" method="post">
+<input type="hidden" name="userid" value="{{owl._id}}">
+	<div class="calendarwrapper">
+	{{#each dates}}
+		<div class="tempcalendar">
+			{{[0]}}
+			{{#each [1]}}
+				<button type="submit" value="{{[0]}}" name = "time">{{[1]}}</button>
+			{{/each}}
+		</div>
+	{{/each}}
+	</div>
+</form>

@@ -1,0 +1,100 @@
+<div>
+	<h1> Register Page </h1>
+	{{#if error}}
+	{{error}}
+	{{type}}
+	{{/if}}
+	{{#if HSS}}
+	<h3>Register as a Perspective College Student</h3>
+	<a href="iec/register">
+			Register as an IEC
+	</a>
+	<a href="owl/register">
+			Register as an OWL
+	</a>
+	{{/if}}
+	{{#if IEC}}
+	<h3>Register as an IEC</h3>
+	<a href="/register">
+			Register as a Perspective College Student
+	</a>
+	<a href="/owl/register">
+			Register as an OWL
+	</a>
+	{{/if}}
+	{{#if OWL}}
+	<h3>Register as an OWL</h3>
+	<a href="/register">
+			Register as a Perspective College Student
+	</a>
+	<a href="/iec/register">
+			Register as an IEC
+	</a>
+	{{/if}}
+
+
+	<form action="/register" method="post" style='max-width: 300px;'>
+	<input type="text" name="username" placeholder="Enter email">
+	<input type="password" id= "ps1" name="password" placeholder="Password" onchange="comparepasswords()">
+	<input type="password" id= "ps2" name="password2" placeholder="Retype Password" onchange="comparepasswords()">
+	<input type = "text" name = "name" placeholder="Name{{#if IEC}} of IEC Organization{{/if}}">
+	<input type = "hidden" name = "type" value = "{{#if HSS}}HSS{{/if}}{{#if IEC}}IEC{{/if}}{{#if OWL}}OWL{{/if}}">
+	<p>{{#if HSS}}Tell us about yourself! Where are you from? What do you like doing? What are you looking for in a college?{{/if}}{{#if IEC}}Help students easily find you. Where are you located? Any specific names?{{/if}}{{#if OWL}}Tell us briefly about yourself. What is your school, major, expected graduation. Where did you hear about us?{{/if}}</p>
+	<input type = "text" name = "description" placeholder="Description">
+
+	{{#if HSS}}
+
+	<input type = "text" name = "iecrec" placeholder="IEC code">
+	<p id="IECbtn" onclick="btnclick()">More Info </p>
+	<div id="IECmodal" class="modal">
+		<div class="modal-content">
+    		<span class="close" id = "close">×</span>
+    		<p>If you are connected with an IEC enter the code found <a href="iec/codes" target="_blank">here.</a> If you do not know name of IEC, are not connected to, or are not sure what an IEC is, leave blank for now.</p>
+  		</div>
+	</div>
+
+	{{/if}}
+
+
+
+	<input type="submit">
+	</form>
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+
+{{#if HSS}}
+
+var IECmodal = document.getElementById('IECmodal');
+var IECbtn = document.getElementById('IECbtn');
+var IECspan = document.getElementById("close");
+function btnclick(){
+	IECmodal.style.display = "block";
+	console.log("button");
+}
+IECspan.onclick= function(){
+	IECmodal.style.display = "none";
+}
+window.onclick=function(event){
+	if (event.target == IECmodal){
+		IECmodal.style.display = "none";
+	} 
+}
+
+{{/if}}
+	function comparepasswords(){
+		ps1= document.getElementById("ps1").value;
+		ps2= document.getElementById("ps2").value;
+		if (ps1 != "" && ps2 != ""){
+			if (ps1 != ps2){
+				alert("They different");
+			}
+		}
+	}
+</script>

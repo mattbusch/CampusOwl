@@ -1,0 +1,16 @@
+<div>
+	<form action="/admin/user/" method="post" style='max-width: 300px;'>
+	<input type="hidden" name="_id" value = "{{theUser._id}}">
+	Username: <input type="text" name="username" value="{{theUser.username}}">
+	<br>Name: <input type="text" name="name" value="{{theUser.name}}">
+	<br>Email: <input type="text" name="email" value="{{theUser.email}}">
+	<br>Type: <input type="text" name="type" value="{{theUser.type}}">
+	<br>Approved: <input type="checkbox" name="approved" value="true" {{#if theUser.approved}}checked{{/if}}>
+	<br>Image: <input type="text" name="image" value="{{theUser.image}}">
+	<br>School Code: <input type="text" name="schoolcode" value="{{theUser.schoolcode}}">
+	<br>Tokens: <input type="text" name="tokens" value="{{theUser.tokens}}">
+	<br>Sessions: <input type="text" name="sessions" value="{{theUser.sessions}}">
+	<br>Schedule: <input type="text" name="sched" value="{{theUser.sched}}">
+	<br><input type="submit" value="Edit">
+	</form>
+</div>
